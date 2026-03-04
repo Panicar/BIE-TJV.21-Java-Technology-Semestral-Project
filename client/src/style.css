@@ -1,0 +1,177 @@
+/* Force dark background on the entire window */
+html, body {
+    background-color: #121212 !important; /* Matte Black */
+    color: #e0e0e0 !important; /* Light Grey Text */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+:root {
+    --bg-matte: #1e1e1e;
+    --accent-blue: #5c7cff;
+    --text-high: #ffffff;
+    --text-medium: #b0b0b0;
+    --input-bg: #2a2a2a;
+}
+
+/* Fix for the "White Background" issue */
+#app-content {
+    background-color: transparent !important;
+}
+
+/* Navbar with Glassmorphism */
+.navbar {
+    background-color: rgba(30, 30, 30, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-high) !important;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--bg-matte) !important;
+    border: 1px solid #333 !important;
+    color: var(--text-high) !important;
+    border-radius: 12px;
+}
+
+/* Fix font colors for Epistemic Items content */
+.card-title { color: var(--text-high) !important; }
+.card-text { color: var(--text-medium) !important; }
+.text-muted { color: #888 !important; }
+
+/* Auth Form Fixes - Ensuring no white background/black text */
+.form-label {
+    color: var(--text-high) !important;
+}
+
+.form-control {
+    background-color: var(--input-bg) !important;
+    border: 1px solid #444 !important;
+    color: var(--text-high) !important;
+}
+
+/* Ensure placeholders are visible but muted */
+.form-control::placeholder {
+    color: #666 !important;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue) !important;
+    border: none !important;
+}
+
+/* src/style.css addition */
+.btn-primary:active {
+    transform: scale(0.98);
+    background-color: #4a6cf0 !important;
+}
+
+#login-error, #signup-error {
+    background: rgba(255, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    display: none; /* Only show when has content */
+}
+
+#login-error:not(:empty), #signup-error:not(:empty) {
+    display: block;
+}
+
+/* src/style.css additions */
+.text-medium {
+    color: var(--text-medium) !important;
+    line-height: 1.8;
+}
+
+.bg-dark {
+    background-color: #1a1a1a !important;
+}
+
+.sticky-top {
+    z-index: 10;
+}
+
+.display-3 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+}
+
+/* src/style.css addition */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #333 !important;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* src/style.css */
+.nav-link.border {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link.border:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-link i {
+    font-size: 0.9rem;
+}
+
+/* Custom styling for cool item content */
+.text-medium {
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    color: #e0e0e0;
+}
+
+.text-medium h1, .text-medium h2 {
+    color: var(--bs-primary);
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.text-medium ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.text-medium li::before {
+    content: "▹";
+    color: var(--bs-primary);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Ensure Quill lists show up with bullets in your dark theme */
+.quill-content ul {
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+.quill-content ol {
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+}
+.quill-content h1 { color: #0d6efd; font-size: 1.75rem; }
+
+/* src/style.css */
+.card-text-fixed {
+    height: 60px; /* Adjust based on your preference */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
